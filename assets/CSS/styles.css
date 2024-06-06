@@ -5,6 +5,14 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Shrikhand", cursive;
+}
+
 /* Header styles */
 header {
   display: flex;
@@ -23,7 +31,7 @@ header .header-container .logo {
   margin: 1.5rem 0;
 }
 header .header-container .location-container {
-  background-color: #e0e0e0;
+  background-color: #EAEAEA;
   width: 100%;
   padding: 1rem 1rem;
   display: flex;
