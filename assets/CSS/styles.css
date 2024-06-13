@@ -19,13 +19,13 @@ h1, h2 {
 h1 {
   color: black;
   font-size: 1.5rem;
-  margin-top: 1rem;
+  margin: 1.5rem 2.5rem;
 }
 
 p {
   color: #353535;
   font-size: 1rem;
-  padding: 1rem;
+  margin: 1.5rem 2rem;
 }
 
 /* Button styles */
@@ -39,7 +39,6 @@ p {
   cursor: pointer;
   border-radius: 25px;
   text-align: center;
-  margin-bottom: 2rem;
 }
 
 /* Header styles */
@@ -83,170 +82,13 @@ main {
   width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
   text-align: center;
 }
 main .main-content {
   text-align: center;
   padding: 2rem;
-}
-/* Fonctionnement section */
-.fonctionnement {
-  background-color: #ffffff;
-  padding: 2rem 1rem;
-}
-.fonctionnement h2 {
-  text-align: left;
-  margin-bottom: 1.5rem;
-  font-size: 1.5rem;
-  color: #353535;
-}
-.fonctionnement .F-boutons {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  align-items: center;
-}
-.fonctionnement .F-boutons .F-bouton {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-.fonctionnement .F-boutons .F-bouton .step-number {
-  position: absolute;
-  left: -1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: #2a9df4;
-  color: white;
-  border-radius: 50%;
-  width: 2rem;
-  height: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.25rem;
-  font-weight: bold;
-}
-.fonctionnement .F-boutons .F-bouton .step-button {
-  background-color: #F6F6F6;
-  border: none;
-  padding: 1.75rem 3rem;
-  border-radius: 1rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  color: #353535;
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  cursor: pointer;
-}
-.fonctionnement .F-boutons .F-bouton .step-button i {
-  font-size: 1.25rem;
-}
-
-/* Restaurants section */
-.restaurants {
-  padding: 4rem 0;
-}
-.restaurants h2 {
-  text-align: left;
-  margin-bottom: 1.5rem;
-  font-size: 1.5rem;
-  color: #353535;
-  padding-left: 1rem;
-}
-.restaurants .Card-Menu {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-}
-.restaurants .card {
-  width: 95%;
-  border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-.restaurants .card:hover {
-  transform: translateY(-5px);
-}
-.restaurants .card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  display: block;
-}
-.restaurants .card .card-details {
-  padding: 1rem;
-  display: flex;
-  justify-content: space-between;
-}
-.restaurants .card .card-details .title-container {
-  flex: 1;
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-}
-.restaurants .card .card-details .title-container h3 {
-  font-size: 1rem;
-  color: black;
-  margin-bottom: rem;
-}
-.restaurants .card .card-details .title-container p {
-  font-size: 1rem;
-  color: #808080;
-  margin-bottom: 0;
-  padding: 0;
-}
-.restaurants .card .card-details .favorite-icon {
-  font-size: 1.5rem;
-  color: #808080;
-  transition: color 0.3s ease;
-  cursor: pointer;
-}
-.restaurants .card .card-details .favorite-icon:hover {
-  color: #9356DC;
-}
-
-/* Footer */
-.footer {
-  background-color: #353535;
-  color: white;
-  padding: 2rem 0;
-  text-align: center;
-}
-.footer .footer-content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-.footer .footer-content .footer-logo {
-  margin-bottom: 1rem;
-}
-.footer .footer-content .footer-logo img {
-  width: 150px;
-  height: auto;
-  filter: brightness(0) invert(1);
-}
-.footer .footer-content .footer-links {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-.footer .footer-content .footer-links .footer-link {
-  display: flex;
-  align-items: center;
-  margin-bottom: 0.5rem;
-}
-.footer .footer-content .footer-links .footer-link i {
-  margin-right: 0.5rem;
-  font-size: 1.2rem;
 }
 
 /*# sourceMappingURL=styles.css.map */
