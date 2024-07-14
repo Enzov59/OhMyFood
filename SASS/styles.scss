@@ -55,7 +55,7 @@ p {
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
-    background-color: lighten($primary-color, 50%); 
+    opacity: 20;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   }
 }
@@ -302,6 +302,139 @@ main {
           margin-right: 0.5rem;
           font-size: 1.2rem;
         }
+      }
+    }
+  }
+}
+
+/* Responsive for Desktop */
+@media (min-width: 769px) {
+  /* Apply larger margins to the main content areas */
+  header,
+  main,
+  
+  .fonctionnement .F-boutons .F-bouton .step-button {
+  font-size: 1rem;
+  }
+  .fonctionnement,
+  .restaurants {
+    padding: 0 5rem;
+  }
+
+  /* Header */
+  .header-container {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 3rem 0rem;
+
+    .logo {
+      height: 50px;
+    }
+
+    .location-container {
+      width: auto;
+      padding: 0.5rem 1rem;
+      box-shadow: none;
+    }
+  }
+
+  /* Main Content */
+  .intro {
+    padding: 3rem 10rem;
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+
+    .cta-button {
+      padding: 0.75rem 1.5rem;
+      font-size: 1.25rem;
+    }
+  }
+
+  /* Fonctionnement Section */
+  .fonctionnement {
+    padding: 3rem 15rem;
+
+    .F-boutons {
+      flex-direction: row;
+      gap: 2rem;
+
+      .F-bouton {
+        flex: 1;
+
+        .step-button {
+          padding: 2rem 5rem;
+          font-size: 1rem;
+
+          i {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  /* Restaurants Section */
+  .restaurants {
+    padding: 3rem 15rem;
+
+    .Card-Menu {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+
+      .card {
+        width: 100%;
+
+        img {
+          height: 200px;
+        }
+
+        .card-details {
+          padding: 1rem;
+
+          .title-container {
+            h3 {
+              font-size: 1.25rem;
+            }
+
+            p {
+              font-size: 1rem;
+            }
+          }
+
+          .favorite-icon {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  /* Footer */
+  .footer {
+    .footer-content {
+      flex-direction: row;
+      justify-content: flex-end;
+
+      .footer-logo {
+        order: 2;
+        margin-bottom: 0;
+      }
+
+      .footer-links {
+        order: 1;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: flex-start;
+        margin-right: 3rem;
       }
     }
   }
