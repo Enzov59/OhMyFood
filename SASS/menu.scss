@@ -56,7 +56,9 @@ p {
 }
 
 /* Header styles */
-header {
+
+.header-menu {
+  position: relative; /* Pour positionner l'image absolue à l'intérieur */
   width: 100%;
   background-color: $white;
   display: flex;
@@ -64,24 +66,26 @@ header {
   justify-content: space-between;
   padding: 1rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
   .arrow-icon {
     font-size: 1.5rem;
     color: $dark-gray;
   }
 
-  .logo-container {
+  .logo-menu {
     display: flex;
     align-items: center;
+    width: 100%;
+  }
 
     .restaurant-image {
-      width: 100px;
-      height: auto;
-      margin-left: 1rem;
-      border-radius: 8px;
+      width: 100%;
+      object-fit: cover; /* Assure que l'image couvre toute la largeur et hauteur du conteneur */
+      top: 0;
+      left: 0;
+      z-index: -1; /* Place l'image derrière le contenu du header */
     }
-  }
-}
 
 /* Main content styles */
 main {
@@ -89,15 +93,14 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem;
 
   .restaurant-section {
     width: 100%;
     background-color: $white;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    padding: 2rem;
-    margin-top: 1rem;
+    padding: 1.5rem;
+    margin-top: -2rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
     .restaurant-info {
@@ -154,11 +157,12 @@ main {
         justify-content: center;
 
         .menu-item {
-          width: calc(50% - 1rem);
+          width: 100%;
           background-color: $light-gray;
           padding: 1rem;
           border-radius: 10px;
           box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        
 
           h3 {
             font-size: 1.2rem;
@@ -209,7 +213,6 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
   }

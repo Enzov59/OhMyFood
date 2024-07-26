@@ -101,7 +101,7 @@ main .main-content {
 /* Fonctionnement section */
 .fonctionnement {
   background-color: #ffffff;
-  padding: 2rem 1rem;
+  padding: 2rem 4.2rem;
 }
 .fonctionnement h2 {
   text-align: left;
@@ -424,7 +424,8 @@ p {
 }
 
 /* Header styles */
-header {
+.header-menu {
+  position: relative; /* Pour positionner l'image absolue à l'intérieur */
   width: 100%;
   background-color: #ffffff;
   display: flex;
@@ -433,19 +434,24 @@ header {
   padding: 1rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-header .arrow-icon {
+
+.arrow-icon {
   font-size: 1.5rem;
   color: #353535;
 }
-header .logo-container {
+
+.logo-menu {
   display: flex;
   align-items: center;
+  width: 100%;
 }
-header .logo-container .restaurant-image {
-  width: 100px;
-  height: auto;
-  margin-left: 1rem;
-  border-radius: 8px;
+
+.restaurant-image {
+  width: 100%;
+  object-fit: cover; /* Assure que l'image couvre toute la largeur et hauteur du conteneur */
+  top: 0;
+  left: 0;
+  z-index: -1; /* Place l'image derrière le contenu du header */
 }
 
 /* Main content styles */
@@ -454,15 +460,14 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem;
 }
 main .restaurant-section {
   width: 100%;
   background-color: #ffffff;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  padding: 2rem;
-  margin-top: 1rem;
+  padding: 1.5rem;
+  margin-top: -2rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 main .restaurant-section .restaurant-info {
@@ -511,7 +516,7 @@ main .restaurant-section .menu-category .menu-items {
   justify-content: center;
 }
 main .restaurant-section .menu-category .menu-items .menu-item {
-  width: calc(50% - 1rem);
+  width: 100%;
   background-color: #F6F6F6;
   padding: 1rem;
   border-radius: 10px;
@@ -556,7 +561,6 @@ footer .footer-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
 }
