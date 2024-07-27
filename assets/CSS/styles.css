@@ -10,28 +10,40 @@
 body {
   font-family: "Roboto", sans-serif;
   background-color: #F6F6F6;
-  overflow-x: hidden;
+  margin: 0 auto;
+  max-width: 1200px; /* Limite la largeur pour éviter que le contenu soit trop large */
 }
 
-h1, h2 {
+h1, h2, h3 {
   font-family: "Shrikhand", cursive;
-  text-align: center;
 }
 
 h1 {
   color: black;
   font-size: 1.5rem;
   margin-top: 1rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #353535;
 }
 
 p {
-  color: #353535;
   font-size: 1rem;
-  padding: 1rem;
+  color: #808080;
 }
 
 /* Button styles */
-.btn, main .restaurant-section .order-button .btn, main .restaurant-section .order-button .cta-button, .cta-button {
+.btn {
   background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
   color: white;
   border: none;
@@ -42,31 +54,101 @@ p {
   border-radius: 25px;
   text-align: center;
   margin-bottom: 2rem;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-.btn:hover, main .restaurant-section .order-button .btn:hover, main .restaurant-section .order-button .cta-button:hover, .cta-button:hover {
-  opacity: 20;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* Header styles */
 header {
   width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+header .logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+header .logo {
+  width: 150px;
+  height: auto;
+}
+
+/* Footer */
+.footer {
+  background-color: #353535;
+  color: #ffffff;
+  padding: 2rem 0;
+  text-align: center;
+}
+.footer .footer-content {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
-header .header-container {
-  width: 100%;
+.footer .footer-content .footer-logo {
+  margin-bottom: 1rem;
+}
+.footer .footer-content .footer-logo img {
+  width: 150px;
+  height: auto;
+  filter: brightness(0) invert(1);
+}
+.footer .footer-content .footer-links {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+}
+.footer .footer-content .footer-links .footer-link {
+  display: flex;
   align-items: center;
+  margin-bottom: 0.5rem;
 }
-header .header-container .logo {
-  height: 50px;
-  margin: 1rem 0;
+.footer .footer-content .footer-links .footer-link i {
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
 }
-header .header-container .location-container {
+
+/* Responsive for Desktop */
+@media (min-width: 1024px) {
+  .header-container {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 3rem 0rem;
+  }
+  .header-container .logo {
+    height: 50px;
+  }
+  /* Footer */
+  .footer .footer-content {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+  .footer .footer-content .footer-logo {
+    order: 2;
+    margin-bottom: 0;
+  }
+  .footer .footer-content .footer-links {
+    order: 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: flex-start;
+    margin-right: 3rem;
+  }
+}
+/* Styles communs à toutes les pages */
+.location-container {
   background-color: #F6F6F6;
   width: 100%;
   padding: 0.5rem 1rem;
@@ -75,12 +157,12 @@ header .header-container .location-container {
   justify-content: center;
   box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.3);
 }
-header .header-container .location-container .location-icon {
+.location-container .location-icon {
   font-size: 1.5rem;
   margin-right: 0.5rem;
   color: #9356DC;
 }
-header .header-container .location-container .location-text {
+.location-container .location-text {
   font-size: 1rem;
   color: #333;
 }
@@ -224,48 +306,8 @@ main .main-content {
   transform: scale(1.2);
 }
 
-/* Footer */
-.footer {
-  background-color: #353535;
-  color: #ffffff;
-  padding: 2rem 0;
-  text-align: center;
-}
-.footer .footer-content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-.footer .footer-content .footer-logo {
-  margin-bottom: 1rem;
-}
-.footer .footer-content .footer-logo img {
-  width: 150px;
-  height: auto;
-  filter: brightness(0) invert(1);
-}
-.footer .footer-content .footer-links {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-.footer .footer-content .footer-links .footer-link {
-  display: flex;
-  align-items: center;
-  margin-bottom: 0.5rem;
-}
-.footer .footer-content .footer-links .footer-link i {
-  margin-right: 0.5rem;
-  font-size: 1.2rem;
-}
-
 /* Responsive for Desktop */
 @media (min-width: 1024px) {
-  /* Apply larger margins to the main content areas */
   header,
   main,
   .fonctionnement .F-boutons .F-bouton .step-button {
@@ -275,16 +317,7 @@ main .main-content {
   .restaurants {
     padding: 0 5rem;
   }
-  /* Header */
-  .header-container {
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 3rem 0rem;
-  }
-  .header-container .logo {
-    height: 50px;
-  }
-  .header-container .location-container {
+  .location-container {
     width: auto;
     padding: 0.5rem 1rem;
     box-shadow: none;
@@ -299,7 +332,7 @@ main .main-content {
   .intro p {
     font-size: 1.2rem;
   }
-  .intro .cta-button {
+  .intro .btn {
     padding: 0.75rem 1.5rem;
     font-size: 1.25rem;
   }
@@ -348,110 +381,16 @@ main .main-content {
   .restaurants .Card-Menu .card .card-details .favorite-icon {
     font-size: 1.5rem;
   }
-  /* Footer */
-  .footer .footer-content {
-    flex-direction: row;
-    justify-content: flex-end;
-  }
-  .footer .footer-content .footer-logo {
-    order: 2;
-    margin-bottom: 0;
-  }
-  .footer .footer-content .footer-links {
-    order: 1;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: flex-start;
-    margin-right: 3rem;
-  }
 }
-/* Global styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Roboto", sans-serif;
-  background-color: #F6F6F6;
-  margin: 0 auto;
-  max-width: 1200px; /* Limite la largeur pour éviter que le contenu soit trop large */
-}
-
-h1, h2, h3 {
-  font-family: "Shrikhand", cursive;
-}
-
-h1 {
-  color: black;
+/* Styles spécifiques à la page d'accueil */
+/* Arrow Icon */
+header .arrow-icon {
   font-size: 1.5rem;
-  margin-top: 1rem;
-  text-align: center;
-}
-
-h2 {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
   color: #353535;
-}
-
-p {
-  font-size: 1rem;
-  color: #808080;
-}
-
-/* Button styles */
-.btn, main .restaurant-section .order-button .btn, main .restaurant-section .order-button .cta-button, .cta-button {
-  background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
-  color: white;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  font-weight: bold;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
   cursor: pointer;
-  border-radius: 25px;
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-/* Header styles */
-.header-menu {
-  position: relative; /* Pour positionner l'image absolue à l'intérieur */
-  width: 100%;
-  background-color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.arrow-icon {
-  font-size: 1.5rem;
-  color: #353535;
-}
-
-.logo-menu {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-
-.restaurant-image {
-  width: 100%;
-  object-fit: cover; /* Assure que l'image couvre toute la largeur et hauteur du conteneur */
-  top: 0;
-  left: 0;
-  z-index: -1; /* Place l'image derrière le contenu du header */
 }
 
 /* Main content styles */
@@ -460,6 +399,22 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+main .logo {
+  width: 150px;
+  height: auto;
+}
+main .logo-menu {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+main .restaurant-image {
+  width: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 main .restaurant-section {
   width: 100%;
@@ -507,7 +462,7 @@ main .restaurant-section .menu-category h2::after {
   background-color: #9356DC;
 }
 main .restaurant-section .menu-category .underline {
-  display: none; /* Pour masquer le soulignement sous les titres */
+  display: none;
 }
 main .restaurant-section .menu-category .menu-items {
   display: flex;
@@ -547,41 +502,10 @@ main .restaurant-section .menu-category .menu-items .menu-item span {
 main .restaurant-section .order-button {
   text-align: center;
 }
-main .restaurant-section .order-button .btn, main .restaurant-section .order-button .cta-button {
+main .restaurant-section .order-button .btn {
   width: 200px;
 }
 
-/* Footer */
-footer {
-  background-color: #353535;
-  color: #ffffff;
-  padding: 2rem 0;
-}
-footer .footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-footer .footer-logo img {
-  width: 150px;
-  height: auto;
-  filter: brightness(0) invert(1);
-}
-footer .footer-links {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-footer .footer-links .footer-link {
-  display: flex;
-  align-items: center;
-  margin-bottom: 0.5rem;
-}
-footer .footer-links .footer-link i {
-  margin-right: 0.5rem;
-  font-size: 1.2rem;
-}
+/* Styles spécifiques à la page de menu */
 
 /*# sourceMappingURL=styles.css.map */
