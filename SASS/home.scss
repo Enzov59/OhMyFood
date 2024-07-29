@@ -36,6 +36,28 @@ main {
   }
 }
 
+.intro {
+  text-align: center; 
+}
+
+.intro-title {
+  display: inline-block; 
+  line-height: 1.2;
+  margin: 15px auto; 
+  max-width: 80%; 
+  font-size: 1.5rem; 
+  font-weight: bold;
+}
+
+.intro-paragraph {
+  text-align: center; 
+  max-width: 80%; 
+  margin: 15px auto; 
+  font-size: 1.2rem; 
+  line-height: 1.5; 
+}
+
+
 /* Fonctionnement section */
 .fonctionnement {
   background-color: $white;
@@ -104,6 +126,11 @@ main {
 }
 
 /* Restaurants section */
+.restaurant-card {
+  text-decoration: none;
+  color: inherit;
+}
+
 .restaurants {
   padding: 4rem 0;
 
@@ -158,6 +185,7 @@ main {
         }
 
         p {
+          display: flex;
           font-size: 1rem;
           color: $gray;
           margin-bottom: 0;
@@ -165,20 +193,12 @@ main {
         }
       }
 
-      .favorite-icon {
-        font-size: 1.5rem;
-        color: $gray;
-        transition: color 0.3s ease, transform 0.3s ease;
-        cursor: pointer;
-
-        &:hover {
-          color: $primary-color;
-          transform: scale(1.2);
+      
         }
       }
     }
-  }
-}
+  
+
 
 
 

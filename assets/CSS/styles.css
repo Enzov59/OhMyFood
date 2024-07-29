@@ -56,6 +56,23 @@ p {
   margin-bottom: 2rem;
 }
 
+.btn:hover {
+  background-color: rgba(52, 152, 219, 0.8); /* Couleur de fond éclaircie avec opacité */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Ombre portée augmentée */
+  opacity: 0.9; /* Réduction de l'opacité pour l'effet d'éclaircissement */
+}
+
+.favorite-icon {
+  font-size: 1.5rem;
+  color: #808080;
+  transition: color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+.favorite-icon:hover {
+  color: #9356DC;
+  transform: scale(1.2);
+}
+
 /* Header styles */
 header {
   width: 100%;
@@ -180,6 +197,27 @@ main .main-content {
   padding: 2rem;
 }
 
+.intro {
+  text-align: center;
+}
+
+.intro-title {
+  display: inline-block;
+  line-height: 1.2;
+  margin: 15px auto;
+  max-width: 80%;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.intro-paragraph {
+  text-align: center;
+  max-width: 80%;
+  margin: 15px auto;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
 /* Fonctionnement section */
 .fonctionnement {
   background-color: #ffffff;
@@ -241,6 +279,11 @@ main .main-content {
 }
 
 /* Restaurants section */
+.restaurant-card {
+  text-decoration: none;
+  color: inherit;
+}
+
 .restaurants {
   padding: 4rem 0;
 }
@@ -290,20 +333,11 @@ main .main-content {
   margin-bottom: 0;
 }
 .restaurants .card .card-details .title-container p {
+  display: flex;
   font-size: 1rem;
   color: #808080;
   margin-bottom: 0;
   padding: 0;
-}
-.restaurants .card .card-details .favorite-icon {
-  font-size: 1.5rem;
-  color: #808080;
-  transition: color 0.3s ease, transform 0.3s ease;
-  cursor: pointer;
-}
-.restaurants .card .card-details .favorite-icon:hover {
-  color: #9356DC;
-  transform: scale(1.2);
 }
 
 /* Responsive for Desktop */
@@ -434,12 +468,6 @@ main .restaurant-section .restaurant-info {
 main .restaurant-section .restaurant-info h1 {
   font-size: 2rem;
   font-weight: bold;
-}
-main .restaurant-section .restaurant-info .favorite-icon i {
-  font-size: 1.5rem;
-  color: #9356DC;
-  margin-left: 1rem;
-  cursor: pointer;
 }
 main .restaurant-section .menu-category {
   margin-bottom: 2rem;
