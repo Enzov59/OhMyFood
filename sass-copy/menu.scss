@@ -1,0 +1,136 @@
+/* Arrow Icon */
+header{
+ .arrow-icon {
+  font-size: 1.5rem;
+  color: $dark-gray;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  cursor: pointer;
+} 
+}
+
+
+/* Main content styles */
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .logo {
+    width: 150px;
+    height: auto;
+  }
+
+.logo-menu {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.restaurant-image {
+  width: 100%;
+  object-fit: cover; 
+  top: 0;
+  left: 0;
+  z-index: -1; 
+}
+
+  .restaurant-section {
+    width: 100%;
+    background-color: $white;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 1.5rem;
+    margin-top: -2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    .restaurant-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+
+      h1 {
+        font-size: 2rem;
+        font-weight: bold;
+      }
+    }
+
+    .menu-category {
+      margin-bottom: 2rem;
+
+      h2 {
+        position: relative;
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        text-align: center;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -5px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 50px;
+          height: 2px;
+          background-color: $primary-color;
+        }
+      }
+
+      .underline {
+        display: none;
+      }
+
+      .menu-items {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+
+        .menu-item {
+          width: 100%;
+          background-color: $light-gray;
+          padding: 1rem;
+          border-radius: 10px;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+          h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+
+          p {
+            font-size: 1rem;
+            color: $gray;
+            margin-bottom: 0.5rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+
+          span {
+            font-size: 1rem;
+            font-weight: bold;
+            color: $dark-gray;
+            display: block;
+            text-align: right;
+          }
+        }
+      }
+    }
+
+    .order-button {
+      text-align: center;
+
+      .btn {
+        width: 200px;
+      }
+    }
+  }
+}
