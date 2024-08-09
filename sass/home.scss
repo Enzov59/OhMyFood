@@ -1,3 +1,59 @@
+    /* Style du loader couvrant toute la page */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeOut 1s ease 2s forwards;
+}
+
+/* Animation du spinner */
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #e0e0e0;
+  border-top: 5px solid #ff6347;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Animation de rotation pour le spinner */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Animation pour faire disparaître le loader */
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* Cacher le contenu pendant le loader */
+#content {
+  opacity: 0;
+  animation: fadeIn 1s ease 2.5s forwards;
+}
+
+/* Animation pour faire apparaître le contenu */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+    
     .location-container {
       background-color: $light-gray;
       width: 100%;
@@ -299,6 +355,9 @@ main {
         }
       }
     }
+  }
+  .contact-button {
+    text-decoration: none;
   }
 }
   
