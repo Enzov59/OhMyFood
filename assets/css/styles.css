@@ -590,6 +590,58 @@ main .restaurant-section .order-button .btn {
   width: 200px;
 }
 
+/* CSS pour les animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.menu-category {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+#entrees {
+  animation-delay: 0.5s; /* Délai pour les entrées */
+}
+
+#plats {
+  animation-delay: 1s; /* Délai pour les plats */
+}
+
+#desserts {
+  animation-delay: 1.5s; /* Délai pour les desserts */
+}
+
+.menu-item {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  animation-delay: 0.5s; /* Délai de base pour chaque item */
+}
+
+.menu-category #entrees .menu-item {
+  animation-delay: 1s;
+}
+
+.menu-category #plats .menu-item {
+  animation-delay: 1.5s;
+}
+
+.menu-category #desserts .menu-item {
+  animation-delay: 2s;
+}
+
+.order-button {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  animation-delay: 2s; /* Délai pour le bouton */
+}
+
 /* Styles spécifiques à la page de menu */
 
 /*# sourceMappingURL=styles.css.map */
