@@ -134,6 +134,9 @@ header .logo {
   margin-right: 0.5rem;
   font-size: 1.2rem;
 }
+.footer .footer-content .footer-links .footer-link .contact-button {
+  text-decoration: none;
+}
 
 /* Responsive for Desktop */
 @media (min-width: 1024px) {
@@ -165,6 +168,56 @@ header .logo {
   }
 }
 /* Styles communs à toutes les pages */
+/* Loader qui couvre toute la page */
+.loader {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: #fff;
+  left: 0;
+  top: 0;
+  z-index: 10000;
+  animation: loader 3s forwards;
+}
+
+/*Animation loader*/
+@keyframes loader {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -10;
+  }
+}
+.loader__circle {
+  border: 10px solid #f3f3f3;
+  border-top: 10px solid rgb(0, 0, 29);
+  border-bottom: 10px solid blue;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  animation: spin 3s linear forwards;
+  /*Placement du loader au milieu de la page*/
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/*Animation du loader circle*/
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 0;
+  }
+}
 .location-container {
   background-color: #F6F6F6;
   width: 100%;
@@ -414,6 +467,9 @@ main .main-content {
   }
   .restaurants .Card-Menu .card .card-details .favorite-icon {
     font-size: 1.5rem;
+  }
+  .contact-button {
+    text-decoration: none;
   }
 }
 /* Styles spécifiques à la page d'accueil */

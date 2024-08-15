@@ -1,58 +1,61 @@
-    /* Style du loader couvrant toute la page */
-#loader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  animation: fadeOut 1s ease 2s forwards;
-}
-
-/* Animation du spinner */
-.spinner {
-  width: 50px;
-  height: 50px;
-  border: 5px solid #e0e0e0;
-  border-top: 5px solid #ff6347;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-/* Animation de rotation pour le spinner */
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
+  /* Loader qui couvre toute la page */
+  .loader {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: #fff;
+    left: 0;
+    top: 0;
+    z-index: 10000;
+    animation: loader 3s forwards;
   }
-  to {
-    transform: rotate(360deg);
+  
+  /*Animation loader*/
+  
+  @keyframes loader {
+    0% {
+      opacity: 1;
+    }
+  
+    100% {
+      opacity: 0;
+      z-index: -10;
+    }
   }
-}
-
-/* Animation pour faire disparaître le loader */
-@keyframes fadeOut {
-  to {
-    opacity: 0;
-    visibility: hidden;
+  
+  .loader__circle {
+    border: 10px solid #f3f3f3;
+    border-top: 10px solid rgb(0, 0, 29);
+    border-bottom: 10px solid blue;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    animation: spin 3s linear forwards;
+  
+    /*Placement du loader au milieu de la page*/
+  
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
   }
-}
-
-/* Cacher le contenu pendant le loader */
-#content {
-  opacity: 0;
-  animation: fadeIn 1s ease 2.5s forwards;
-}
-
-/* Animation pour faire apparaître le contenu */
-@keyframes fadeIn {
-  to {
-    opacity: 1;
+  
+  /*Animation du loader circle*/
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+      opacity: 1;
+    }
+  
+    100% {
+      transform: rotate(360deg);
+      opacity: 0;
+    }
   }
-}
+
     
     .location-container {
       background-color: $light-gray;
