@@ -165,26 +165,94 @@ main {
   animation-delay: 1.5s; /* Délai pour les desserts */
 }
 
-.menu-item {
-  opacity: 0;
-  animation: fadeIn 1s forwards;
-  animation-delay: 0.5s; /* Délai de base pour chaque item */
+.custom-button {
+  display: block;
+  width: 100%;
+  max-width: 90%;
+  padding: 20px;
+  background-color: #3498db;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 18px;
+  text-align: left;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden; // Assure que l'animation reste dans les limites du bouton
+
+  &:hover {
+    background-color: #2980b9;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 0; // Commence avec une largeur de 0
+      background-color: #27ae60;
+      animation: fill-button 1s forwards; // Anime l'élargissement
+    }
+  }
+
+  @keyframes fill-button {
+    to {
+      width: 16.67%; // S'étend jusqu'à 1/6ème de la largeur du bouton
+    }
+  }
 }
 
-.menu-category #entrees .menu-item {
-  animation-delay: 1s;
+.button-content {
+  display: flex;
+  flex-direction: column; // Dispose le titre et le sous-titre en colonne
+  width: 100%;
+  position: relative; // Assure que l'animation reste en dessous
+  z-index: 1; // Garde le texte et le prix visible au-dessus de l'animation
 }
 
-.menu-category #plats .menu-item {
-  animation-delay: 1.5s;
+.button-title {
+  margin: 0;
+  font-size: 24px;
 }
 
-.menu-category #desserts .menu-item {
-  animation-delay: 2s;
+.subtitle-price-container {
+  display: flex;
+  justify-content: space-between; // Espace entre le sous-titre à gauche et le prix à droite
+  align-items: center;
+  position: relative; // Assure que les éléments sont positionnés correctement
+  width: 100%;
+  overflow: hidden; // Cache les éléments qui dépassent du conteneur
 }
 
-.order-button {
-  opacity: 0;
-  animation: fadeIn 1s forwards;
-  animation-delay: 2s; /* Délai pour le bouton */
+.subtitle-wrapper {
+  flex: 1; // Permet au sous-titre de prendre l'espace disponible
+  display: flex;
+  align-items: center;
+  overflow: hidden; // Cache le texte qui dépasse
+}
+
+.button-subtitle {
+  margin: 0;
+  font-size: 18px; // Taille du sous-titre
+  color: #ecf0f1;
+  white-space: nowrap; // Empêche le texte de se couper en plusieurs lignes
+  overflow: hidden; // Cache le texte qui dépasse
+  text-overflow: ellipsis; // Remplace le texte débordant par des points de suspension
+  transition: text-overflow 0.3s; // Transition pour le texte débordant
+
+  .custom-button:hover & {
+    text-overflow: ellipsis; // Remplace le texte débordant par des points de suspension lors du survol
+  }
+}
+
+.button-price {
+  font-size: 18px; // Même taille que le sous-titre
+  font-weight: bold; // Le prix en gras
+  transition: transform 0.3s; // Animation de déplacement
+  white-space: nowrap; // Empêche le texte de se couper en plusieurs lignes
+  margin-left: 10px; // Marge pour éviter que le prix touche le sous-titre
+
+  .custom-button:hover & {
+    transform: translateX(-100%); // Déplace le prix complètement hors de l'écran lors du survol
+  }
 }

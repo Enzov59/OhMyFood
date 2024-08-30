@@ -618,28 +618,91 @@ main .restaurant-section .order-button .btn {
   animation-delay: 1.5s; /* Délai pour les desserts */
 }
 
-.menu-item {
-  opacity: 0;
-  animation: fadeIn 1s forwards;
-  animation-delay: 0.5s; /* Délai de base pour chaque item */
+.custom-button {
+  display: block;
+  width: 100%;
+  max-width: 90%;
+  padding: 20px;
+  background-color: #3498db;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 18px;
+  text-align: left;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.custom-button:hover {
+  background-color: #2980b9;
+}
+.custom-button:hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 0;
+  background-color: #27ae60;
+  animation: fill-button 1s forwards;
+}
+@keyframes fill-button {
+  to {
+    width: 16.67%;
+  }
 }
 
-.menu-category #entrees .menu-item {
-  animation-delay: 1s;
+.button-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
-.menu-category #plats .menu-item {
-  animation-delay: 1.5s;
+.button-title {
+  margin: 0;
+  font-size: 24px;
 }
 
-.menu-category #desserts .menu-item {
-  animation-delay: 2s;
+.subtitle-price-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
 }
 
-.order-button {
-  opacity: 0;
-  animation: fadeIn 1s forwards;
-  animation-delay: 2s; /* Délai pour le bouton */
+.subtitle-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.button-subtitle {
+  margin: 0;
+  font-size: 18px;
+  color: #ecf0f1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: text-overflow 0.3s;
+}
+.custom-button:hover .button-subtitle {
+  text-overflow: ellipsis;
+}
+
+.button-price {
+  font-size: 18px;
+  font-weight: bold;
+  transition: transform 0.3s;
+  white-space: nowrap;
+  margin-left: 10px;
+}
+.custom-button:hover .button-price {
+  transform: translateX(-100%);
 }
 
 /* Styles spécifiques à la page de menu */
